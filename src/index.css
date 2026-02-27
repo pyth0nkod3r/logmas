@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 33% 97%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 150 82% 23%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 63% 42%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 216 33% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 43 66% 52%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 20% 90%;
+    --input: 216 20% 90%;
+    --ring: 150 82% 23%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 150 82% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 66% 52%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 150 60% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 150 60% 28%;
+    --sidebar-ring: 43 66% 52%;
+
+    --success: 145 63% 42%;
+    --success-foreground: 0 0% 100%;
+    --gold: 43 66% 52%;
+    --gold-foreground: 0 0% 10%;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 150 20% 8%;
+    --foreground: 0 0% 95%;
+    --card: 150 15% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 150 15% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 145 63% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 82% 23%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 150 10% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 43 66% 52%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 10% 20%;
+    --input: 150 10% 20%;
+    --ring: 145 63% 42%;
+    --sidebar-background: 150 20% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 43 66% 52%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 150 15% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 150 10% 15%;
+    --sidebar-ring: 43 66% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(150, 82%, 23%), hsl(145, 63%, 42%));
+  }
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(43, 66%, 52%), hsl(43, 80%, 60%));
+  }
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(150, 82%, 23%), hsl(145, 63%, 42%));
+  }
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
